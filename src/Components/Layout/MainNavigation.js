@@ -1,21 +1,17 @@
-import { Link } from "react-router-dom"
+import { useLocation } from "react-router-dom"
+import NavigationMenu from "../UI/NavigationMenu"
 
 const MainNavigation = () => {
+  const location = useLocation()
+  const pathName = location.pathname
+
   return (
-    <div>
-      <ul>
-        <li>
-          <Link to='/'>Home</Link>
-        </li>
-        <li>
-          <Link to='/address'>Map Address</Link>
-        </li>
-        <li>
-          <Link to='/measure'>Map Measure</Link>
-        </li>
-        <li>
-          <Link to='/route'>Map Route</Link>
-        </li>
+    <div className="bg-teal-200 p-6">
+      <ul className="flex gap-x-4">
+        <NavigationMenu path={ '/' } name='Home' active={ pathName === '/' } />
+        <NavigationMenu path={ '/address' } name='Address' active={ pathName === '/address' } />
+        <NavigationMenu path={ '/measure' } name='Measure' active={ pathName === '/measure' } />
+        <NavigationMenu path={ '/route' } name='Route' active={ pathName === '/route' } />
       </ul>
     </div>
   )
