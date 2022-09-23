@@ -7,7 +7,7 @@ import RoutePage from "./Pages/RoutePage";
 
 function App() {
   return (
-    <div>
+    <>
       <MainNavigation />
       <Routes>
         <Route path="/" element={ <HomePage /> } />
@@ -15,7 +15,7 @@ function App() {
         <Route path="/measure" element={ <MeasurePage /> } />
         <Route path="/route" element={ <RoutePage /> } />
       </Routes>
-    </div>
+    </>
   );
 }
 
